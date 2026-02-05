@@ -2,6 +2,7 @@ import { type NextRequest, NextResponse } from "next/server"
 
 // Recursively find values in nested objects using dot-notation paths
 function buscarValorRecursivo(obj: any, path: string): any {
+  if(!path || !obj) return null
   // Replace [0], [1], etc. with .0, .1 to normalize the path
   const normalizedPath = path.replace(/\[(\d+)\]/g, ".$1")
   const chaves = normalizedPath.split(".")

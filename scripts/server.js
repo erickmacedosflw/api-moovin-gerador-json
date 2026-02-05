@@ -36,6 +36,8 @@ const mapa = [
 // @param {String} path - The dot-notation path (e.g., "Endereco.Coluna02")
 // @returns {*} The value found at the path, or null if not found
 function buscarValorRecursivo(obj, path) {
+  if(!path || !obj) return null
+  
   // Split the path by dots to get individual keys
   const chaves = path.split(".")
 
